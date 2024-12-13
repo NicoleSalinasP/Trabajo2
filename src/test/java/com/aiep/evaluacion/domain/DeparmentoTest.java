@@ -2,6 +2,7 @@ package com.aiep.evaluacion.domain;
 
 import static com.aiep.evaluacion.domain.DeparmentoTestSamples.*;
 import static com.aiep.evaluacion.domain.EmpleadosTestSamples.*;
+import static com.aiep.evaluacion.domain.JefeTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.aiep.evaluacion.web.rest.TestUtil;
@@ -45,5 +46,17 @@ class DeparmentoTest {
         deparmento.setEmpleados(new HashSet<>());
         assertThat(deparmento.getEmpleados()).doesNotContain(empleadosBack);
         assertThat(empleadosBack.getDeparmento()).isNull();
+    }
+
+    @Test
+    void jefeTest() {
+        Deparmento deparmento = getDeparmentoRandomSampleGenerator();
+        Jefe jefeBack = getJefeRandomSampleGenerator();
+
+        deparmento.setJefe(jefeBack);
+        assertThat(deparmento.getJefe()).isEqualTo(jefeBack);
+
+        deparmento.jefe(null);
+        assertThat(deparmento.getJefe()).isNull();
     }
 }

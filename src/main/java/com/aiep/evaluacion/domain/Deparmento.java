@@ -35,6 +35,10 @@ public class Deparmento implements Serializable {
     @JsonIgnoreProperties(value = { "deparmento" }, allowSetters = true)
     private Set<Empleados> empleados = new HashSet<>();
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties(value = { "deparmentos" }, allowSetters = true)
+    private Jefe jefe;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
     public Long getId() {
@@ -117,6 +121,19 @@ public class Deparmento implements Serializable {
     public Deparmento removeEmpleados(Empleados empleados) {
         this.empleados.remove(empleados);
         empleados.setDeparmento(null);
+        return this;
+    }
+
+    public Jefe getJefe() {
+        return this.jefe;
+    }
+
+    public void setJefe(Jefe jefe) {
+        this.jefe = jefe;
+    }
+
+    public Deparmento jefe(Jefe jefe) {
+        this.setJefe(jefe);
         return this;
     }
 

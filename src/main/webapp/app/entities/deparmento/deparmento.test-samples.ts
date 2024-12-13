@@ -1,19 +1,21 @@
 import { IDeparmento, NewDeparmento } from './deparmento.model';
 
 export const sampleWithRequiredData: IDeparmento = {
-  id: 10895,
+  id: 2579,
 };
 
 export const sampleWithPartialData: IDeparmento = {
-  id: 1511,
-  nombreDepartamento: 'but',
+  id: 29562,
+  nombreDepartamento: 'irk majestically',
+  ubicacionDepartamento: 'boohoo who',
+  presupuestoDepartamento: 'over heavily rotating',
 };
 
 export const sampleWithFullData: IDeparmento = {
-  id: 28408,
-  nombreDepartamento: 'up since seldom',
-  ubicacionDepartamento: 'bicycle',
-  presupuestoDepartamento: 'vibraphone whoa',
+  id: 25727,
+  nombreDepartamento: 'supposing',
+  ubicacionDepartamento: 'kinase enchanting brr',
+  presupuestoDepartamento: 'till upward',
 };
 
 export const sampleWithNewData: NewDeparmento = {

@@ -1,23 +1,22 @@
 import { IEmpleados, NewEmpleados } from './empleados.model';
 
 export const sampleWithRequiredData: IEmpleados = {
-  id: 9918,
+  id: 20450,
 };
 
 export const sampleWithPartialData: IEmpleados = {
-  id: 15476,
-  nombresEmpleado: 'regarding less while',
-  apellidoEmpleado: 'when',
-  telefono: 'upwardly',
-  correo: 'yuck likable jubilant',
+  id: 14768,
+  nombresEmpleado: 'scared acidly',
+  apellidoEmpleado: 'undergo',
+  correo: 'polyester provided alb',
 };
 
 export const sampleWithFullData: IEmpleados = {
-  id: 23139,
-  nombresEmpleado: 'before haze meanwhile',
-  apellidoEmpleado: 'mechanically',
-  telefono: 'microblog fervently gloomy',
-  correo: 'athwart powerless refer',
+  id: 23533,
+  nombresEmpleado: 'sternly',
+  apellidoEmpleado: 'especially ill-fated',
+  telefono: 'lifestyle',
+  correo: 'square drat yellowish',
 };
 
 export const sampleWithNewData: NewEmpleados = {

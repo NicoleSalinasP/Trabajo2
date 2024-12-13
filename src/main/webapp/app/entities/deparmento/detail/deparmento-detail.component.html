@@ -27,6 +27,14 @@
           <dd>
             <span>{{ deparmentoRef.presupuestoDepartamento }}</span>
           </dd>
+          <dt><span jhiTranslate="trabajo2App.deparmento.jefe">Jefe</span></dt>
+          <dd>
+            @if (deparmento()!.jefe) {
+              <div>
+                <a [routerLink]="['/jefe', deparmento()!.jefe?.id, 'view']">{{ deparmentoRef.jefe?.id }}</a>
+              </div>
+            }
+          </dd>
         </dl>
 
         <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

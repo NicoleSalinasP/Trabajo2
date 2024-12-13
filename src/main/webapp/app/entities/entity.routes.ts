@@ -16,6 +16,11 @@ const routes: Routes = [
     data: { pageTitle: 'trabajo2App.deparmento.home.title' },
     loadChildren: () => import('./deparmento/deparmento.routes'),
   },
+  {
+    path: 'jefe',
+    data: { pageTitle: 'trabajo2App.jefe.home.title' },
+    loadChildren: () => import('./jefe/jefe.routes'),
+  },
   /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
 ];
 

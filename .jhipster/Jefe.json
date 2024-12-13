@@ -1,0 +1,32 @@
+{
+  "annotations": {
+    "changelogDate": "20241213211339"
+  },
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "nombreJefe",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telefonoJefe",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "Jefe",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "deparmento",
+      "otherEntityRelationshipName": "jefe",
+      "relationshipName": "deparmento",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

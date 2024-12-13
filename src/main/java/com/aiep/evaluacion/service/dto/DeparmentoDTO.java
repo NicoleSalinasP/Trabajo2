@@ -17,6 +17,8 @@ public class DeparmentoDTO implements Serializable {
 
     private String presupuestoDepartamento;
 
+    private JefeDTO jefe;
+
     public Long getId() {
         return id;
     }
@@ -49,6 +51,14 @@ public class DeparmentoDTO implements Serializable {
         this.presupuestoDepartamento = presupuestoDepartamento;
     }
 
+    public JefeDTO getJefe() {
+        return jefe;
+    }
+
+    public void setJefe(JefeDTO jefe) {
+        this.jefe = jefe;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -78,6 +88,7 @@ public class DeparmentoDTO implements Serializable {
             ", nombreDepartamento='" + getNombreDepartamento() + "'" +
             ", ubicacionDepartamento='" + getUbicacionDepartamento() + "'" +
             ", presupuestoDepartamento='" + getPresupuestoDepartamento() + "'" +
+            ", jefe=" + getJefe() +
             "}";
     }
 }

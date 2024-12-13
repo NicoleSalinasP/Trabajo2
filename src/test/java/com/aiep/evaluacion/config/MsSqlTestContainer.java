@@ -4,14 +4,13 @@ import java.util.Collections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testcontainers.containers.JdbcDatabaseContainer;
-import org.testcontainers.containers.MSSQLServerContainer;
 import org.testcontainers.containers.output.Slf4jLogConsumer;
 
 public class MsSqlTestContainer implements SqlTestContainer {
 
     private static final Logger LOG = LoggerFactory.getLogger(MsSqlTestContainer.class);
 
-    private MSSQLServerContainer<?> mSSQLServerContainer;
+    private MSSQLServerContainer<?> mSSQLServerContainer = null;
 
     @Override
     public void destroy() {

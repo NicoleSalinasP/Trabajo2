@@ -295,11 +295,6 @@ class DeparmentoResourceIT {
         Deparmento partialUpdatedDeparmento = new Deparmento();
         partialUpdatedDeparmento.setId(deparmento.getId());
 
-        partialUpdatedDeparmento
-            .nombreDepartamento(UPDATED_NOMBRE_DEPARTAMENTO)
-            .ubicacionDepartamento(UPDATED_UBICACION_DEPARTAMENTO)
-            .presupuestoDepartamento(UPDATED_PRESUPUESTO_DEPARTAMENTO);
-
         restDeparmentoMockMvc
             .perform(
                 patch(ENTITY_API_URL_ID, partialUpdatedDeparmento.getId())

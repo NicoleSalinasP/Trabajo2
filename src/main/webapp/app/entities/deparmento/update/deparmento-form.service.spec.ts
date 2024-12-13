@@ -23,6 +23,7 @@ describe('Deparmento Form Service', () => {
             nombreDepartamento: expect.any(Object),
             ubicacionDepartamento: expect.any(Object),
             presupuestoDepartamento: expect.any(Object),
+            jefe: expect.any(Object),
           }),
         );
       });
@@ -36,6 +37,7 @@ describe('Deparmento Form Service', () => {
             nombreDepartamento: expect.any(Object),
             ubicacionDepartamento: expect.any(Object),
             presupuestoDepartamento: expect.any(Object),
+            jefe: expect.any(Object),
           }),
         );
       });

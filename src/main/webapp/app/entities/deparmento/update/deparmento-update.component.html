@@ -56,6 +56,16 @@
             formControlName="presupuestoDepartamento"
           />
         </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_jefe" jhiTranslate="trabajo2App.deparmento.jefe">Jefe</label>
+          <select class="form-control" id="field_jefe" data-cy="jefe" name="jefe" formControlName="jefe" [compareWith]="compareJefe">
+            <option [ngValue]="null"></option>
+            @for (jefeOption of jefesSharedCollection; track $index) {
+              <option [ngValue]="jefeOption">{{ jefeOption.id }}</option>
+            }
+          </select>
+        </div>
       </div>
 
       <div>

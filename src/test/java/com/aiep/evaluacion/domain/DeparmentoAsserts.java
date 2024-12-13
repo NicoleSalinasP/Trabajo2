@@ -65,6 +65,8 @@ public class DeparmentoAsserts {
      * @param actual the actual entity
      */
     public static void assertDeparmentoUpdatableRelationshipsEquals(Deparmento expected, Deparmento actual) {
-        // empty method
+        assertThat(expected)
+            .as("Verify Deparmento relationships")
+            .satisfies(e -> assertThat(e.getJefe()).as("check jefe").isEqualTo(actual.getJefe()));
     }
 }

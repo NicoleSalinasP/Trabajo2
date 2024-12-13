@@ -33,7 +33,7 @@ public class Empleados implements Serializable {
     private String correo;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = { "empleados" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "empleados", "jefe" }, allowSetters = true)
     private Deparmento deparmento;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

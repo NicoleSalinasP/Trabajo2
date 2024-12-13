@@ -63,6 +63,12 @@
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
+            <th scope="col" jhiSortBy="jefe.id">
+              <div class="d-flex">
+                <span jhiTranslate="trabajo2App.deparmento.jefe">Jefe</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
             <th scope="col"></th>
           </tr>
         </thead>
@@ -75,6 +81,13 @@
               <td>{{ deparmento.nombreDepartamento }}</td>
               <td>{{ deparmento.ubicacionDepartamento }}</td>
               <td>{{ deparmento.presupuestoDepartamento }}</td>
+              <td>
+                @if (deparmento.jefe) {
+                  <div>
+                    <a [routerLink]="['/jefe', deparmento.jefe.id, 'view']">{{ deparmento.jefe.id }}</a>
+                  </div>
+                }
+              </td>
               <td class="text-end">
                 <div class="btn-group">
                   <a [routerLink]="['/deparmento', deparmento.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">

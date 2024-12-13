@@ -303,7 +303,7 @@ class EmpleadosResourceIT {
         Empleados partialUpdatedEmpleados = new Empleados();
         partialUpdatedEmpleados.setId(empleados.getId());
 
-        partialUpdatedEmpleados.apellidoEmpleado(UPDATED_APELLIDO_EMPLEADO).correo(UPDATED_CORREO);
+        partialUpdatedEmpleados.apellidoEmpleado(UPDATED_APELLIDO_EMPLEADO).telefono(UPDATED_TELEFONO).correo(UPDATED_CORREO);
 
         restEmpleadosMockMvc
             .perform(

@@ -21,6 +21,7 @@ type DeparmentoFormGroupContent = {
   nombreDepartamento: FormControl<IDeparmento['nombreDepartamento']>;
   ubicacionDepartamento: FormControl<IDeparmento['ubicacionDepartamento']>;
   presupuestoDepartamento: FormControl<IDeparmento['presupuestoDepartamento']>;
+  jefe: FormControl<IDeparmento['jefe']>;
 };
 
 export type DeparmentoFormGroup = FormGroup<DeparmentoFormGroupContent>;
@@ -43,6 +44,7 @@ export class DeparmentoFormService {
       nombreDepartamento: new FormControl(deparmentoRawValue.nombreDepartamento),
       ubicacionDepartamento: new FormControl(deparmentoRawValue.ubicacionDepartamento),
       presupuestoDepartamento: new FormControl(deparmentoRawValue.presupuestoDepartamento),
+      jefe: new FormControl(deparmentoRawValue.jefe),
     });
   }
 

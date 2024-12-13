@@ -49,10 +49,10 @@ describe('Empleados Management Update Component', () => {
   describe('ngOnInit', () => {
     it('Should call Deparmento query and add missing value', () => {
       const empleados: IEmpleados = { id: 456 };
-      const deparmento: IDeparmento = { id: 25066 };
+      const deparmento: IDeparmento = { id: 12127 };
       empleados.deparmento = deparmento;
 
-      const deparmentoCollection: IDeparmento[] = [{ id: 7298 }];
+      const deparmentoCollection: IDeparmento[] = [{ id: 20154 }];
       jest.spyOn(deparmentoService, 'query').mockReturnValue(of(new HttpResponse({ body: deparmentoCollection })));
       const additionalDeparmentos = [deparmento];
       const expectedCollection: IDeparmento[] = [...additionalDeparmentos, ...deparmentoCollection];
@@ -71,7 +71,7 @@ describe('Empleados Management Update Component', () => {
 
     it('Should update editForm', () => {
       const empleados: IEmpleados = { id: 456 };
-      const deparmento: IDeparmento = { id: 27285 };
+      const deparmento: IDeparmento = { id: 3833 };
       empleados.deparmento = deparmento;
 
       activatedRoute.data = of({ empleados });

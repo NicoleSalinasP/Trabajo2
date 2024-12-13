@@ -21,7 +21,8 @@
       "nombreDepartamento": "Nombre Departamento",
       "ubicacionDepartamento": "Ubicacion Departamento",
       "presupuestoDepartamento": "Presupuesto Departamento",
-      "empleados": "Empleados"
+      "empleados": "Empleados",
+      "jefe": "Jefe"
     }
   }
 }
