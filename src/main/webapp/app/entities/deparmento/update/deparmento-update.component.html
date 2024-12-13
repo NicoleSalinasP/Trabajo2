@@ -1,0 +1,78 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-deparmento-heading" data-cy="DeparmentoCreateUpdateHeading" jhiTranslate="trabajo2App.deparmento.home.createOrEditLabel">
+        Crear o editar Deparmento
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="trabajo2App.deparmento.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_nombreDepartamento" jhiTranslate="trabajo2App.deparmento.nombreDepartamento"
+            >Nombre Departamento</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="nombreDepartamento"
+            id="field_nombreDepartamento"
+            data-cy="nombreDepartamento"
+            formControlName="nombreDepartamento"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_ubicacionDepartamento" jhiTranslate="trabajo2App.deparmento.ubicacionDepartamento"
+            >Ubicacion Departamento</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="ubicacionDepartamento"
+            id="field_ubicacionDepartamento"
+            data-cy="ubicacionDepartamento"
+            formControlName="ubicacionDepartamento"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_presupuestoDepartamento" jhiTranslate="trabajo2App.deparmento.presupuestoDepartamento"
+            >Presupuesto Departamento</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="presupuestoDepartamento"
+            id="field_presupuestoDepartamento"
+            data-cy="presupuestoDepartamento"
+            formControlName="presupuestoDepartamento"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancelar</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Guardar</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

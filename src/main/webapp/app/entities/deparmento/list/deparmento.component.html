@@ -1,0 +1,102 @@
+<div>
+  <h2 id="page-heading" data-cy="DeparmentoHeading">
+    <span jhiTranslate="trabajo2App.deparmento.home.title">Deparmentos</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="trabajo2App.deparmento.home.refreshListLabel">Refrescar lista</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-deparmento"
+        [routerLink]="['/deparmento/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="trabajo2App.deparmento.home.createLabel">Crear nuevo Deparmento</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  @if (deparmentos?.length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="trabajo2App.deparmento.home.notFound">Ningún Deparmentos encontrado</span>
+    </div>
+  }
+
+  @if (deparmentos && deparmentos.length > 0) {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [sortState]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="nombreDepartamento">
+              <div class="d-flex">
+                <span jhiTranslate="trabajo2App.deparmento.nombreDepartamento">Nombre Departamento</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="ubicacionDepartamento">
+              <div class="d-flex">
+                <span jhiTranslate="trabajo2App.deparmento.ubicacionDepartamento">Ubicacion Departamento</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="presupuestoDepartamento">
+              <div class="d-flex">
+                <span jhiTranslate="trabajo2App.deparmento.presupuestoDepartamento">Presupuesto Departamento</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody infinite-scroll (scrolled)="loadNextPage()" [infiniteScrollDisabled]="!hasMorePage()" [infiniteScrollDistance]="0">
+          @for (deparmento of deparmentos; track trackId(deparmento)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/deparmento', deparmento.id, 'view']">{{ deparmento.id }}</a>
+              </td>
+              <td>{{ deparmento.nombreDepartamento }}</td>
+              <td>{{ deparmento.ubicacionDepartamento }}</td>
+              <td>{{ deparmento.presupuestoDepartamento }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/deparmento', deparmento.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Vista</span>
+                  </a>
+
+                  <a [routerLink]="['/deparmento', deparmento.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editar</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(deparmento)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Eliminar</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

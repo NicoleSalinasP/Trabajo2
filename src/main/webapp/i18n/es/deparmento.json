@@ -1,0 +1,27 @@
+{
+  "trabajo2App": {
+    "deparmento": {
+      "home": {
+        "title": "Deparmentos",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Deparmento",
+        "createOrEditLabel": "Crear o editar Deparmento",
+        "notFound": "Ningún Deparmentos encontrado"
+      },
+      "created": "Un nuevo Deparmento ha sido creado con el identificador {{ param }}",
+      "updated": "Un Deparmento ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Deparmento ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Deparmento {{ id }}?"
+      },
+      "detail": {
+        "title": "Deparmento"
+      },
+      "id": "ID",
+      "nombreDepartamento": "Nombre Departamento",
+      "ubicacionDepartamento": "Ubicacion Departamento",
+      "presupuestoDepartamento": "Presupuesto Departamento",
+      "empleados": "Empleados"
+    }
+  }
+}

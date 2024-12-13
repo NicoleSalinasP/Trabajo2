@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (deparmento(); as deparmentoRef) {
+      <div>
+        <h2 data-cy="deparmentoDetailsHeading"><span jhiTranslate="trabajo2App.deparmento.detail.title">Deparmento</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ deparmentoRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="trabajo2App.deparmento.nombreDepartamento">Nombre Departamento</span></dt>
+          <dd>
+            <span>{{ deparmentoRef.nombreDepartamento }}</span>
+          </dd>
+          <dt><span jhiTranslate="trabajo2App.deparmento.ubicacionDepartamento">Ubicacion Departamento</span></dt>
+          <dd>
+            <span>{{ deparmentoRef.ubicacionDepartamento }}</span>
+          </dd>
+          <dt><span jhiTranslate="trabajo2App.deparmento.presupuestoDepartamento">Presupuesto Departamento</span></dt>
+          <dd>
+            <span>{{ deparmentoRef.presupuestoDepartamento }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Volver</span>
+        </button>
+
+        <button type="button" [routerLink]="['/deparmento', deparmentoRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

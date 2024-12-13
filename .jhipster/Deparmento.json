@@ -1,0 +1,36 @@
+{
+  "annotations": {
+    "changelogDate": "20241213194911"
+  },
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "nombreDepartamento",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ubicacionDepartamento",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "presupuestoDepartamento",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "Deparmento",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "empleados",
+      "otherEntityRelationshipName": "deparmento",
+      "relationshipName": "empleados",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
